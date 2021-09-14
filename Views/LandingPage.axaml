@@ -12,13 +12,28 @@
             <Setter Property="TextAlignment" Value="Center"/>
             <Setter Property="Margin" Value="0 0 0 20"/>
         </Style>
+        
+        <Style Selector="TextBlock.h3">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0 0 0 5"/>
+        </Style>
     </UserControl.Styles>
     
     <StackPanel>
         <TextBlock Classes="h1">Novel Scraper Json Converter</TextBlock>
         <StackPanel>
-            <TextBlock>Sorry for the issues with the Novel Scraper, it is being fixed.</TextBlock>
-            <TextBlock> This program converts the chapters.json file that is left behind and converts it to an EPub</TextBlock>
+            <TextBlock Classes="h3" >Sorry for the issues with the Novel Scraper.</TextBlock>
+            <TextBlock Classes="h3" >It is being fixed but meanwhile</TextBlock>
+            <TextBlock Classes="h3"> This program converts the chapters.json file</TextBlock>
+            <TextBlock Classes="h3"> To a valid EPub</TextBlock>
+        </StackPanel>
+        <StackPanel Margin="0 40 0 0 " >
+            <DockPanel>
+                <TextBlock Margin="10 5 20 0 " DockPanel.Dock="Left">Choose file</TextBlock>
+                <Button DockPanel.Dock="Left">Click here to choose Chapters.json file</Button>
+                <Button Background="Green" Margin="5 0 0 0 ">Convert</Button>
+            </DockPanel>
         </StackPanel>
     </StackPanel>
 </UserControl>
