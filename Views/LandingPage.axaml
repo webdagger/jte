@@ -4,7 +4,12 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
              x:Class="JTE.Views.LandingPage"
-             xmlns:vm="using:JTE.ViewModels">
+             xmlns:vm="using:JTE.ViewModels"
+             
+            >
+    <Design.DataContext>
+        <vm:LandingPageViewModel/>
+    </Design.DataContext>
     <UserControl.Styles>
         <Style Selector="TextBlock.h1">
             <Setter Property="FontSize" Value="24" />
@@ -31,7 +36,7 @@
         <StackPanel Margin="0 40 0 0 " >
             <DockPanel>
                 <TextBlock Margin="10 5 20 0 " DockPanel.Dock="Left">Choose file</TextBlock>
-                <Button DockPanel.Dock="Left">Click here to choose Chapters.json file</Button>
+                <Button Command="{Binding OpenFileDialogCommand}" DockPanel.Dock="Left">Click here to choose Chapters.json file</Button>
                 <Button Background="Green" Margin="5 0 0 0 ">Convert</Button>
             </DockPanel>
         </StackPanel>
