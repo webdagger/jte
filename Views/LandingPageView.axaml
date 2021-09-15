@@ -1,0 +1,63 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="JTE.Views.LandingPage"
+             xmlns:vm="clr-namespace:JTE.ViewModels"
+             
+            >
+    <Design.DataContext>
+        <vm:LandingPageViewModel/>
+    </Design.DataContext>
+    <UserControl.Styles>
+        <Style Selector="TextBlock.landing__info">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="FontWeight" Value="Bold"/> 
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="10"></Setter>
+            <Setter Property="Margin" Value="0 0 0 20"/>
+        </Style>
+        
+        <Style Selector="TextBlock.h3">
+            <Setter Property="FontSize" Value="12" />
+            <Setter Property="TextAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="0 0 0 5"/>
+        </Style>
+    </UserControl.Styles>
+    
+    <Grid Margin="10">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="Auto" />
+            
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" xml:space="preserve" Classes="landing__info">
+            Novel Scraper Json Converter.
+            Sorry for the issue with building a book.
+            You can use this to build an Epub book from the chapters.json file.
+        </TextBlock>
+        <StackPanel Grid.Row="1">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+            
+                </Grid.RowDefinitions>
+                <TextBlock Grid.Row="0">1</TextBlock>
+                <StackPanel Orientation="Horizontal" Grid.Row="1">
+                    <Button Content="Click to select chapters.json file" VerticalAlignment="Center" Click="Button_OnClick"/>
+                </StackPanel>
+                <StackPanel Margin="0 40 0 0" Grid.Row="2">
+                    <Label x:Name="LogLabel" Content="{Binding Path=ConsoleBox}" />
+                </StackPanel>
+            </Grid>
+        </StackPanel>
+        
+       
+    
+    </Grid>
+    
+    
+</UserControl>

@@ -11,6 +11,7 @@ namespace JTE.Views
         {
             Instance = this;
             InitializeComponent();
+
 #if DEBUG
             this.AttachDevTools();
 #endif
